@@ -1,4 +1,4 @@
-# OpenGl-Animation-Motion
+# Django
 
 ```
 $ pip install django
