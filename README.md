@@ -1,4 +1,4 @@
-# Django
+# Django Project - Travel-site
 
 ```
 $ pip install django
@@ -26,3 +26,28 @@ if 'CODESPACE_NAME' in os.environ:
 ```
 
 curl -H 'Accept: application/json; indent=4' -u admin1:password http://127.0.0.1:8000/users/
+
+### To add Statc directory
+```
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    "/var/www/static/",
+]
+```
+### To extend the layout page in another html page
+In another page which extend the content of `layout.html`, we need
+```html
+{% extends "layout.html" %}
+{% block startblock %}
+{% endblock starblock %}
+```
+
+## Making database migration 
+After creating database in models.py
+and register model in `<app>/admin.py`
+```python
+from django.contrib import admin
+from <app_name>.models import Contact
+# Register your models here.
+admin.site.register(Contact)
+```
