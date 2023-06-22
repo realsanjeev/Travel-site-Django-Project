@@ -1,0 +1,42 @@
+{% extends "base.html" %} 
+{% block title %}: Contact{% endblock title %} 
+{% block start %}
+
+<div id="main-container">
+  <div id="first">
+    <h1>Feedback Us</h1>
+    <h4>Please fill all entries.</h4>
+    <form action="/contact" method="post">
+      {% csrf_token %}
+      <label>Name :</label>
+      <input name="name" placeholder="Your Name" type="text" />
+      <label>Email :</label>
+      <input name="email" placeholder="Your Email" type="text" />
+      <label>Message :</label>
+      <textarea name="msg" placeholder="Message"> </textarea>
+
+      <h2 style="color: blue;">{{message}}</h2>
+      <input name="submit" type="submit" value="Send" />
+    </form>
+  </div>
+</div>
+  <div class="post">
+    {% for record in records %}
+    <div class="bottom">
+      <div class="author">
+          <div class="profile"></div>
+          <p class="name">By <a>{{record.name}}</a></p>
+      </div>
+      <p class="intro">{{record.message}} </p>
+      <div class="post-info">
+          <ion-icon name="time"></ion-icon>
+          <p class="post-info">{{record.date}}</p>
+          <ion-icon name="chatboxes"></ion-icon>
+          <p class="post-info"><a>0 comments</a></p>
+      </div>
+  </div>
+  <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+  {% endfor %}
+  
+</div>
+{% endblock start %}

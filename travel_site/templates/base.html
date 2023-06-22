@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Jounral{% block title %}{% endblock title %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/website-logo.png' %}">
+</head>
+<body>
+  <header>
+    <h3>Travel Jounral</h3>
+    <nav class="nav-bar">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="/home">HOME</a></li>
+        <li class="nav-item"><a href="/places">PLACES</a></li>
+        <li class="nav-item"><a href="/contact">CONTACT</a></li>
+        <li class="nav-item"><a href="/about">ABOUT</a></li>
+
+
+        <li class="nav-item"><a href="/login">LOGIN</a></li>
+        <li class="nav-item"><a href="/signup">signup</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="block-container">
+{% block start %}
+{% endblock start %}
+</div>
+
+<footer>
+  Copyright &copy; 2023
+</footer>
+</body>
+</html>

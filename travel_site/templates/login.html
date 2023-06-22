@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}
+ : Login
+{% endblock title %}
+
+{% block start %}
+<div class="container">
+  <div class="header">
+      <h2>Log In</h2>
+
+      <h3 style="color: red;" id="message">{{message}}</h3>
+      <script>
+        const messageElement = document.getElementById("message");
+        // Hide the message after 3 seconds
+        setTimeout(function () {
+        messageElement.style.display = "none";
+        }, 3000);
+      </script>
+
+
+  </div>
+  <form class="form" id="form" method="post" action="/login">
+      {% csrf_token %}
+      <div class="form-control">
+          <label for="">Username</label>
+          <input type="text" placeholder="username" id="username" name="username" required>
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+      </div>
+      <div class="form-control">
+          <label for="">Password</label>
+          <input type="password" placeholder="Password" id="password" name="password" required>
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+      </div>
+      <button type="submit">login </button>
+      <input name="submit" type="submit" value="Send" />
+  </form>
+</div>
+{% endblock start %}

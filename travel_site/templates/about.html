@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}: About{% endblock title %}
+{% block start %}
+<div class="about">
+    <div class="upper">
+      <div class="logo">
+        <div class="image">
+          <div class="camp">
+            <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/78235/tent-clipart-md.png" alt="Image" id="tent" />
+            <img src="https://thumbs.gfycat.com/LinedGoldenKentrosaurus-max-1mb.gif" alt="Image" id="fire" />
+          </div>
+        </div>
+      </div>
+      <div class="info">
+        <h1>ABOUT YELPCAMP</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque
+          nostrum excepturi unde eveniet delectus? Porro esse laudantium hic
+          ipsam sed inventore, aliquid quidem tempora rem harum quasi quia
+          corrupti dignissimos?
+        </p>
+      </div>
+    </div>
+    <!-- ------------------------------------ -->
+    <div class="lower">
+      <div class="info" id="lower-info">
+        <h1>ABOUT OUR TEAM</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque
+          nostrum excepturi unde eveniet delectus? Porro esse laudantium hic
+          ipsam sed inventore, aliquid quidem tempora rem harum quasi quia
+          corrupti dignissimos?
+        </p>
+      </div>
+      <div class="slider" id="lower-img">
+        {% load static %}
+        <img src="{% static 'images/everest.gif' %}" alt="Image" id="slider" />
+      </div>
+    </div>
+    <!-- ------------------------------------ -->
+  </div>
+  <script src="{% static 'js/main.js' %}"></script>
+
+{% endblock start %}
