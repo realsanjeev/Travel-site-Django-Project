@@ -51,3 +51,9 @@ from <app_name>.models import Contact
 # Register your models here.
 admin.site.register(Contact)
 ```
+
+## Log in Form 
+settings.py    `AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+`

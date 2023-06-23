@@ -12,3 +12,5 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
 #scrollTo=jj4lDE-8RYU4
+
+# aaa Letters, digits and @/

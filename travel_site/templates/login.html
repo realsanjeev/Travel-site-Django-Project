@@ -21,22 +21,10 @@
   </div>
   <form class="form" id="form" method="post" action="/login">
       {% csrf_token %}
-      <div class="form-control">
-          <label for="">Username</label>
-          <input type="text" placeholder="username" id="username" name="username" required>
-          <i class="fas fa-check-circle"></i>
-          <i class="fas fa-exclamation-circle"></i>
-          <small>Error message</small>
-      </div>
-      <div class="form-control">
-          <label for="">Password</label>
-          <input type="password" placeholder="Password" id="password" name="password" required>
-          <i class="fas fa-check-circle"></i>
-          <i class="fas fa-exclamation-circle"></i>
-          <small>Error message</small>
-      </div>
+      {{ form.as_p }}
       <button type="submit">login </button>
       <input name="submit" type="submit" value="Send" />
   </form>
 </div>
+
 {% endblock start %}

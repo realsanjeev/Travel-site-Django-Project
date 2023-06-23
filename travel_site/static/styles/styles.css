@@ -3,6 +3,12 @@
 * {
   margin: 0px;
 }
+
+/* errorlist */
+.errorlist > li {
+  color:red;
+  list-style: none;
+}
 /* nav bar */
 header {
   background-color: #f2f2f2;
