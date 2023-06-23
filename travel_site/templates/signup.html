@@ -10,14 +10,14 @@
     <form class="form" id="form" method="post" action="/signup">
         {% csrf_token %}
         <div class="form-control">
-            <label for="">Username</label>
+            <label for="username">Username</label>
             <input type="text" placeholder="username" id="username" name="username">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <small>Error message</small>
         </div>
         <div class="form-control">
-            <label for="">Email</label>
+            <label for="email">Email</label>
             <input type="email" placeholder="info@email.com" id="email" name="email">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
