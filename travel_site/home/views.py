@@ -5,7 +5,9 @@ from home.models import Contact
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm
+from home.forms import ContactForm
+
 from django.views.decorators.csrf import csrf_protect
 
 def display_in_console(statement):
@@ -21,24 +23,17 @@ def about(request):
 
 @csrf_protect
 def contact(request):
-    context = {}
-    context["records"] = Contact.objects.all()
-    display_in_console(context)
-
     if request.method == "POST":
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        message = request.POST.get('msg')
-        date = datetime.now()
-        display_in_console(f"name: {name}\nemail: {email}\nmessage: {message}\ndate: {date}")
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            context = {"message": "Feedback is successfully registered."}
+            return render(request, "contact.html", context)
+    else:
+        form = ContactForm()
+        context = {"form": form}
+        return render(request, "contact.html", context)
         
-        contact = Contact(name=name, email=email, message=message)
-        contact.save()
-        
-        context["message"] = "Thanks for your feedback. We will contact you within 24 hrs"
-        return render(request, "contact.html", context=context)
-
-    return render(request, "contact.html", context=context)
 
 def places(request):
     return render(request, "places.html")
@@ -68,6 +63,7 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     return HttpResponse("Logged out user")
+
 
 def register_user(request):
     if request.method == "POST":

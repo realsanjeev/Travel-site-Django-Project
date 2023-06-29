@@ -8,12 +8,7 @@
     <h4>Please fill all entries.</h4>
     <form action="/contact" method="post">
       {% csrf_token %}
-      <label>Name :</label>
-      <input name="name" placeholder="Your Name" type="text" />
-      <label>Email :</label>
-      <input name="email" placeholder="Your Email" type="text" />
-      <label>Message :</label>
-      <textarea name="msg" placeholder="Message"> </textarea>
+      {{form.as_p}}
 
       <h2 style="color: blue;">{{message}}</h2>
       <input name="submit" type="submit" value="Send" />
