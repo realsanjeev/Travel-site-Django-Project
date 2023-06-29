@@ -9,60 +9,12 @@
   color:red;
   list-style: none;
 }
-/* nav bar */
-header {
-  background-color: #f2f2f2;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  margin: 0px;
-  height: 59px;
-  overflow: hidden;
-  overflow-x: hidden;
-}
-
-h3 {
-  margin: 0;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.nav-bar {
-  margin-left: auto;
-}
-
-.nav-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.nav-item {
-  margin-right: 10px;
-}
-
-.nav-item:last-child {
-  margin-right: 0;
-}
-
-.nav-item a {
-  text-decoration: none;
-  color: #333;
-  padding: 5px;
-}
-
-.nav-item a:hover {
-  color: #000;
-  background-color: #e0e0e0;
-  text-decoration: underline;
-}
-
 /* about page */
 .block-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .about {
