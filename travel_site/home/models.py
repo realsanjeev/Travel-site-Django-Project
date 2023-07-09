@@ -11,5 +11,8 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
 #scrollTo=jj4lDE-8RYU4
-
 # aaa Letters, digits and @/
+
+# class CommentFeedback(models.Model):
+#     comment = models.TextField(max_length=255)
+#     feedback_id = models.Inte
