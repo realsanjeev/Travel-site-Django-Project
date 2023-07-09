@@ -1,14 +1,12 @@
 from datetime import datetime
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from home.models import Contact
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-
-from django.contrib.auth.forms import AuthenticationForm
-from home.forms import ContactForm
-
 from django.views.decorators.csrf import csrf_protect
+
+from home.models import Contact
+from home.forms import ContactForm, CustomAuthenticationForm
 
 def display_in_console(statement):
     print("-" * 100)
@@ -31,8 +29,8 @@ def contact(request):
             return render(request, "contact.html", context)
     else:
         form = ContactForm()
-        context = {"form": form}
-        return render(request, "contact.html", context)
+    context = {"form": form}
+    return render(request, "contact.html", context)
         
 
 def places(request):
@@ -41,7 +39,7 @@ def places(request):
 @csrf_protect
 def login_user(request):
     if request.method == "POST":
-        form = AuthenticationForm(request, data=request.POST)
+        form = CustomAuthenticationForm(request, data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
@@ -54,7 +52,7 @@ def login_user(request):
                 context = {"message": "Login Failed. Please enter the correct username and password"}
                 return render(request, "login.html", context)
     else:
-        form = AuthenticationForm()
+        form = CustomAuthenticationForm()
     
     context = {"form": form}
     return render(request, "login.html", context)
@@ -67,19 +65,17 @@ def logout_user(request):
 
 def register_user(request):
     if request.method == "POST":
-        
         username = request.POST.get('username')
-        print("$"*88)
         email = request.POST.get('email')
-        print("$"*88)
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirmpassword')
-        print("$"*88)
-        display_in_console("sfsfs")
+        display_in_console("$"*88)
 
         if password == confirm_password:
             # Create the user and perform additional registration logic as needed
-            user = User.objects.create_user(username=username, email=email, password=password)
+            user = User.objects.create_user(username=username, 
+                                            email=email, 
+                                            password=password)
             login(request, user)
             # Redirect to the protected page after successful registration
             # return redirect("home")
