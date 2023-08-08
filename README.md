@@ -12,7 +12,7 @@ $ python manage.py startapp firstapp
 ```
 ### Migrate the model and create superuser
 ```
-$ $ python manage.py makemigration
+$ python manage.py makemigrations
 $ python manage.py migrate 
 $ python manage.py createsuperuser
 ```

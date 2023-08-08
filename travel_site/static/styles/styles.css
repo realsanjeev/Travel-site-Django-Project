@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@100&family=Exo:ital,wght@1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@1,900&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+
+:root {
+  --about-image: url(https://cdn.dribbble.com/users/696579/screenshots/5415942/drib_test_2.gif)
+}
 * {
   margin: 0px;
 }
@@ -16,7 +21,6 @@
   flex-wrap: wrap;
   width: 100%;
 }
-
 .about {
   padding: 2rem 0rem;
 }
@@ -38,7 +42,7 @@
   border-radius: 50%;
 } */
 .image {
-  background-image: url(https://cdn.dribbble.com/users/696579/screenshots/5415942/drib_test_2.gif);
+  background-image: var(--about-image);
   background-size: cover;
   width: 36rem;
   height: 28rem;
@@ -68,11 +72,11 @@
   text-align: center;
   padding: 0rem 2rem;
   border-radius: 10px;
-  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-/* .info:hover{
+.info:hover{
   transform: scale(1.1);
-} */
+}
 .info h1 {
   font-family: "Exo", sans-serif;
   font-size: 3rem;
@@ -145,8 +149,9 @@
 #first {
   width: 400px;
   height: 610px;
-  box-shadow: 0 0 0 1px rgba(14, 41, 57, 0.12), 0 2px 5px rgba(14, 41, 57, 0.44),
-    inset 0 -1px 2px rgba(14, 41, 57, 0.15);
+  box-shadow: 0 0 0 1px rgba(14, 41, 57, 0.12), 
+              0 2px 5px rgba(14, 41, 57, 0.44),
+              inset 0 -1px 2px rgba(14, 41, 57, 0.15);
   float: left;
   padding: 10px 50px 0;
   background: linear-gradient(#fff, #f2f6f9);
@@ -168,6 +173,7 @@ input {
   border: 1px solid #cbcbcb;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.18);
   font-size: 16px;
+  max-width: -webkit-fill-available;
 }
 textarea {
   width: 354px;
@@ -179,6 +185,7 @@ textarea {
   border: 1px solid #cbcbcb;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.18);
   font-size: 16px;
+  max-width: -webkit-fill-available;
 }
 input[type="submit"] {
   width: 354px;
@@ -195,11 +202,10 @@ input[type="submit"]:hover {
   background: linear-gradient(to bottom, #36caf0 5%, #22abe9 100%);
 }
 .post {
-  display: flex;
+  margin-top: 10px;
   justify-content: space-evenly;
   flex-wrap: nowrap;
 }
-
 /* home */
 .home {
   background-image:  linear-gradient(rgba(0, 0, 0, 0.5), 
@@ -249,11 +255,7 @@ footer {
   background-color: #000;
   color: white;
 }
-/* post box */
 /* posts box */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
-
-
 .card {
   height: 500px;
   width: 380px;
@@ -273,9 +275,9 @@ p {
   line-height: 24px;
 }
 
-.intro {
+.record-intro {
   width: 85%;
-}
+} 
 
 a:link,
 a:visited {
@@ -335,10 +337,8 @@ ion-icon {
 }
 
 /* signup css */
-
 .container {
   margin-top: 10px;
-  display: flex;
   justify-content: center;
   flex-direction: column;
   background-color: #fff;
