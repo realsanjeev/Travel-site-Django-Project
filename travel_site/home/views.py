@@ -31,8 +31,9 @@ def contact(request):
             return render(request, "contact.html", context)
     else:
         form = ContactForm()
-        context = {"form": form}
-        return render(request, "contact.html", context)
+    context = {"form": form}
+    return render(request, "contact.html", context)
+    
         
 
 def places(request):

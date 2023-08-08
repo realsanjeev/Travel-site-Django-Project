@@ -6,7 +6,10 @@ class ContactForm(forms.ModelForm):
         model = Contact
         fields = ("name", "email", "message")
         widgets = {
-            "name": forms.TextInput(attrs={"class": "form-control"}),
-            "age": forms.EmailInput(attrs={"class": "form-control"}),
-            "message": forms.Textarea(attrs={"class": "form-control"})
+            "name": forms.TextInput(attrs={"class": "form-control", 
+            "placeholder":"Enter the name"}),
+            "age": forms.EmailInput(attrs={"class": "form-control", 
+            "placeholder":"Enter the email"}),
+            "message": forms.Textarea(attrs={"class": "form-control", 
+            "placeholder":"Enter the message"})
         }
