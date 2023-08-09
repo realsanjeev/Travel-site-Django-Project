@@ -16,12 +16,12 @@
       }, 3000);
     </script>
   </div>
-  <form class="form" id="form" method="post" action="/login">
+  <form class="form" id="form" method="post" action="account/login">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">login</button>
-    <input name="submit" type="submit" value="Send" />
   </form>
+  <a href="/account/signup" alt="Sign Up link"><Button class="button">Sign Up</Button></a>
 </div>
 
 {% endblock start %}

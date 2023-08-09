@@ -26,6 +26,7 @@
       <button type="submit">Send</button>
     </form>
   </div>
+  <div class="feedback-view">
   <div class="post">
     {% if records is not None %}
     {% for record in records %}
@@ -37,13 +38,14 @@
       <p class="record-intro">{{record.message}} </p>
       <div class="post-info">
           <ion-icon name="time"></ion-icon>
-          <p class="post-info">{{record.date}}</p>
+          <p class="post-info">{{record.publish_date}}</p>
           <ion-icon name="chatboxes"></ion-icon>
           <p class="post-info"><a>0 comments</a></p>
       </div>
   </div>
   {% endfor %}
   {% endif %}
+</div>
 </div>
 <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
 {% endblock start %}
