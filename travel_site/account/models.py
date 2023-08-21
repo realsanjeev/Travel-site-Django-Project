@@ -10,4 +10,4 @@ class Profile(models.Model):
     dob = models.DateField(null=True)
 
     def __str__(self):
-        self.user
+        return self.user

@@ -1,13 +1,14 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
-{% block title %}: Contact{% endblock title %} 
+{% block title %}: Contact{% endblock title %}
 
 {% block start %}
-    <div class="container">
-      <div class="header">
-          <h2>Feedback Us</h2>
-          <h4>Please fill all entries.</h4>
-      </div>
+<div class="feedback-frame">
+  <div class="container">
+    <div class="header">
+      <h2>Feedback Us</h2>
+      <h4>Please fill all entries.</h4>
+    </div>
     <form action="/contact" method="post" class="form">
       {% csrf_token %}
       {{ form.name.label_tag }}
@@ -27,25 +28,26 @@
     </form>
   </div>
   <div class="feedback-view">
-  <div class="post">
-    {% if records is not None %}
-    {% for record in records %}
-    <div class="bottom">
-      <div class="author">
+    <div class="post">
+      {% if records is not None %}
+      {% for record in records %}
+      <div class="bottom">
+        <div class="author">
           <div class="profile"></div>
           <p class="name">By <a>{{record.name}}</a></p>
-      </div>
-      <p class="record-intro">{{record.message}} </p>
-      <div class="post-info">
+        </div>
+        <p class="record-intro">{{record.message}} </p>
+        <div class="post-info">
           <ion-icon name="time"></ion-icon>
           <p class="post-info">{{record.publish_date}}</p>
           <ion-icon name="chatboxes"></ion-icon>
           <p class="post-info"><a>0 comments</a></p>
+        </div>
       </div>
+      {% endfor %}
+      {% endif %}
+    </div>
   </div>
-  {% endfor %}
-  {% endif %}
-</div>
 </div>
 <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
 {% endblock start %}

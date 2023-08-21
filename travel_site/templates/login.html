@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %} : Login {% endblock title %} 
+{% block title %} : Login {% endblock title %}
 
 {% block start %}
 <div class="container">
@@ -21,7 +21,9 @@
     {{ form.as_p }}
     <button type="submit">login</button>
   </form>
-  <a href="/account/signup" alt="Sign Up link"><Button class="button">Sign Up</Button></a>
+  <div class="toggle-btn container">
+  <a href="/account/signup" alt="Sign Up link" class="toggle-btn">Sign Up</a>
+</div>
 </div>
 
-{% endblock start %}
+  {% endblock start %}

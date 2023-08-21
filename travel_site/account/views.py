@@ -24,7 +24,6 @@ def login_user(request):
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
-            display_in_console(f"{username} ==== {password}")
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)

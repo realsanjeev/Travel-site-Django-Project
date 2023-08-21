@@ -141,6 +141,11 @@
 }
 
 /* contact.html styles */
+.feedback-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #main-container {
   width: 710px;
   height: 620px;
@@ -484,4 +489,15 @@ input:focus {
   to {
       -webkit-transform: rotate(0deg) scale(1) skew(0deg) translateY(0);
   }
+}
+
+/* signup */
+.toggle-btn {
+  justify-content: center;
+  align-content: space-around;
+  padding: 8px;
+  background: #2fef2f;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
 }
