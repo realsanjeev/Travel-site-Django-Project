@@ -1,17 +1,14 @@
-* {
+/* * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+} */
+
+.profile-root {
+    margin-top: 50px;
 }
 
-body {
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-}
-
-.container {
+.profile-container {
     height: 450px;
     width: 300px;
     box-shadow: 0 10px 20px black;
@@ -23,7 +20,7 @@ body {
     font-family: 'Abel', sans-serif;
 }
 
-.image {
+.profile-image {
     height: 100px;
     width: 100px;
     background-size: cover;
@@ -31,7 +28,7 @@ body {
     border: 8px solid white;
     position: relative;
     top: 200px;
-    margin-left: 170px;
+    margin-left: 50px;
     box-shadow: 0 2px 15px rgb(58, 54, 54);
     transform: rotate(-20deg);
 }

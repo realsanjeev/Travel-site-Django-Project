@@ -72,17 +72,21 @@ def register_user(request):
             return render(request, signup_template, context)
     return render(request, signup_template)
 
-def account_view(request):
+def account_view(request, username):
     profile_template = os.path.join("account", "profile.html")
-    # return HttpResponse("ok done")
-    records = Profile.objects.all() 
-    record = Profile.objects.all().first()
-    display_in_console(record.__dict__)
-    context = {}
-    context["user"] = record
-    print(records)
-    # for record in records:
-    #     print(record.__dict__)
-    # pass
-    return render(request, profile_template, context=context)
+    _exists = User.objects.filter(username=username).first()
+    if _exists:
+        user = User.objects.filter(username=username).first()
+        profile = Profile.objects.filter(user=user).first()
+
+        display_in_console(profile)
+        display_in_console(f"user: {profile.user.username}")
+        context = {}
+        context["profile"] = profile
+        # for record in records:
+        #     print(record.__dict__)
+        # pass
+        return render(request, profile_template, context=context)
+    else:
+        return HttpResponse(f"`{username}` doesnot exist. Or user is in Private")
     
