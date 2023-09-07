@@ -1,0 +1,21 @@
+{% extends "account/base.html" %}
+{% block title %} {{user}} Profile {% endblock title %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+{% load static %}
+<link rel="stylesheet" href="{% static 'static/styles/profile-style.css' %}">
+{% endblock head %}
+{% block start %} 
+<div class="container">
+    <div class="shape">
+        <div class="profile-image">
+            <img src="{{user.profile_pics}}" alt="{{user.username}} profile-pics" />
+        </div>
+    </div>
+    <h3>{{user.firstname}} {{user.lastname}}</h3>
+    <h3 class="title">Web Designer</h3>
+    <p>{{user.desc}}</p>
+</div>
+{% endblock start %}
