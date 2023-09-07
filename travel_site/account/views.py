@@ -47,10 +47,7 @@ def logout_user(request):
 
 def register_user(request):
     signup_template = os.path.join("account", "signup.html")
-    if request.method == "GET":
-        display_in_console("GET mETHOD")
-        return render(request, signup_template)
-    elif request.method == "POST":
+    if request.method == "POST":
         display_in_console("Register-user")
         username = request.POST.get('username')
         email = request.POST.get('email')
@@ -66,7 +63,7 @@ def register_user(request):
             login(request, user)
             # Redirect to the protected page after successful registration
             # return redirect("home")
-            return render(request, "home.html")
+            return render(request, signup_template)
         else:
             context = {"error_message": "Passwords do not match"}
             return render(request, signup_template, context)

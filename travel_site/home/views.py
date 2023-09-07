@@ -9,7 +9,8 @@ from home.models import Contact
 from home.forms import ContactForm
 
 def display_in_console(statement: str) -> None:
-    '''print in console
+    '''
+    Print in console
     '''
     print("-" * 100)
     print(statement)
@@ -22,13 +23,10 @@ def contact(request):
     print(len(feedback_records))
     
     try:
-        for records in feedback_records:
-            display_in_console(records.publish_date)
         context["records"] = feedback_records
     except Exception as err:
         display_in_console(f"Exception occured: {err}\nfeedback records: {type(feedback_records)}")
         context["records"] = None
-
     
     if request.method == "POST":
         form = ContactForm(request.POST)

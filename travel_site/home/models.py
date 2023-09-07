@@ -8,6 +8,6 @@ class Contact(models.Model):
     publish_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return str(self.publish_date)
+        return str(self.message)
     
     
