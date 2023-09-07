@@ -18,5 +18,7 @@ slide.addEventListener("load", slider());
 
 // Hide the message after 3 seconds
 setTimeout(function () {
-  messageElement.style.display = "none";
+  if (messageElement) {
+    messageElement.style.display = "none";
+  }
 }, 3000);

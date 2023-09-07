@@ -1,0 +1,45 @@
+{% extends "account/base.html" %}
+{% block title %}: Signup{% endblock title %}
+
+{% block start %}
+<div class="container">
+    <div class="header">
+        <h2>Create Account</h2>
+    </div>
+    <form class="form" id="form" method="post" action="account/signup">
+        {% csrf_token %}
+        <div class="form-control">
+            <label for="username">Username</label>
+            <input type="text" placeholder="username" id="username" name="username">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small class="message">Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="email">Email</label>
+            <input type="email" placeholder="info@email.com" id="email" name="email">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small class="message">Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="password">Password</label>
+            <input type="password" placeholder="Password" id="password" name="password">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small class="message">Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="password" placeholder="Confirm Password" id="confirmpassword" name="confirmpassword">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small class="message">Error message</small>
+        </div>
+        {{error_message}}
+        <button>Sign Up 🎉</button>
+    </form>
+  </div>
+  {% load static %}
+  <script src="{% static 'js/signUp.js' %}"></script>
+{% endblock start %}

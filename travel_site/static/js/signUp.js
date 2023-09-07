@@ -83,9 +83,9 @@ function isEmail(email) {
 
 //! show the message of 'submitted'
 function submittedForm() {
-  header.classList.add("hidden");
-  form.classList.add("hidden");
-  message.classList.remove("hidden");
+  header?.classList.add("hidden");
+  form?.classList.add("hidden");
+  message?.classList.remove("hidden");
   ani();
   setTimeout("location.reload(true);", 3000);
 }

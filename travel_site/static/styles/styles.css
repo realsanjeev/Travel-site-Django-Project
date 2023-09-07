@@ -144,7 +144,7 @@
 .feedback-frame {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 #main-container {
   width: 710px;
@@ -355,7 +355,7 @@ ion-icon {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 400px;
   max-width: 100%;
 }
@@ -467,6 +467,14 @@ input:focus {
   -webkit-animation-fill-mode: forwards;
   animation-direction: alternate;
   -webkit-animation-direction: alternate;
+}
+.signup-container {
+  display: flex;
+  margin: 0% 10% 5%;
+  border-radius: 5px;
+  background-color: #e7ff0180;
+  padding: 5px;
+  justify-content: space-around;
 }
 
 .hidden {

@@ -1,0 +1,30 @@
+{% extends "account/base.html" %}
+
+{% block title %} : Login {% endblock title %}
+
+{% block start %}
+<div class="container">
+  <div class="header">
+    <h2>Log In</h2>
+
+    <h3 style="color: red" id="message">{{message}}</h3>
+    <script>
+      const messageElement = document.getElementById("message");
+      // Hide the message after 3 seconds
+      setTimeout(function () {
+        messageElement.style.display = "none";
+      }, 3000);
+    </script>
+  </div>
+  <form class="form" id="form" method="post" action="account/login">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">login</button>
+  </form>
+  <a href="/account/signup" alt="Sign Up link"  class="signup-container">
+    <div>Sign Up
+    </div>
+  </a>
+</div>
+
+{% endblock start %}

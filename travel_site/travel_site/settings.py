@@ -24,14 +24,14 @@ if 'CODESPACE_NAME' in os.environ:
 # Application definition
 
 INSTALLED_APPS = [
-    "home.apps.HomeConfig",
-    "account.apps.AccountConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "home.apps.HomeConfig",
+    "account",
 ]
 
 MIDDLEWARE = [
