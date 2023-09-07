@@ -8,7 +8,8 @@ const button = document.querySelector("button");
 const message = document.querySelector(".message");
 
 //! submit the form when clicking the button
-form.addEventListener("submit", (e) => {
+document.getElementById("form").addEventListener("submit", (e) => {
+
   e.preventDefault();
 
   if (
@@ -17,7 +18,9 @@ form.addEventListener("submit", (e) => {
     password.value.trim() === "" ||
     confirmpassword.value.trim() !== password.value.trim()
   ) {
+    console.log("form event");
     checkInputs();
+    console.log("End evetn")
   } else {
     submittedForm();
   }
@@ -83,9 +86,9 @@ function isEmail(email) {
 
 //! show the message of 'submitted'
 function submittedForm() {
-  header?.classList.add("hidden");
-  form?.classList.add("hidden");
-  message?.classList.remove("hidden");
+  header.classList.add("hidden");
+  form.classList.add("hidden");
+  message.classList.remove("hidden");
   ani();
   setTimeout("location.reload(true);", 3000);
 }
