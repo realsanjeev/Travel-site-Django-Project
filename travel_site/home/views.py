@@ -19,13 +19,13 @@ def contact(request):
     context = {}
     feedback_records = Contact.objects.all()
     print(len(feedback_records))
-    
+
     try:
-        context["records"] = feedback_records
+        context["records"] = feedback_records.reverse()
     except Exception as err:
         display_in_console(f"Exception occured: {err}\nfeedback records: {type(feedback_records)}")
         context["records"] = None
-    
+
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
