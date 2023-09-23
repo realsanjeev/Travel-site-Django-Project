@@ -1,9 +1,7 @@
 import os
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_protect
-from django.contrib.auth.decorators import login_required
 
 from home.models import Contact
 from home.forms import ContactForm
@@ -34,7 +32,7 @@ def contact(request):
             form.save()
             context["form"] = form
             context["message"] = "Feedback is successfully registered."
-            return render(request, "contact.html", context)
+            return redirect("contact")
     else:
         form = ContactForm()
     context["form"] = form
